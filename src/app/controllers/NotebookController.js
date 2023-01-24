@@ -21,9 +21,11 @@ class NotebookController {
       return res.json(e);
     }
 
-    const lista = [];
-
-    notebooks.forEach((dado) => {
+    /**
+     * @todo
+     * Dar uma abstraída nisso aqui
+     */
+    const lista = notebooks.map((dado) => {
       const stringD = dado.split("\n").filter((word) => (word || null));
       const stringV = {};
 
@@ -35,7 +37,7 @@ class NotebookController {
 
       Object.assign(stringV, { reviews: stringD[3] });
 
-      lista.push(stringV);
+      return stringV;
     });
 
     return res.json(lista);

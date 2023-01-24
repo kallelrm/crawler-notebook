@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
-import * as Yup from 'yup';
-import User from '../models/User';
-import authConfig from '../../config/auth';
+import jwt from "jsonwebtoken";
+import * as Yup from "yup";
+import User from "../models/User";
+import authConfig from "../../config/auth";
 
 class SessionController {
   async store(req, res) {
@@ -13,7 +13,7 @@ class SessionController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation fails' });
+      return res.status(400).json({ error: "Validation fails" });
     }
 
     const { email, password } = req.body;
@@ -21,7 +21,7 @@ class SessionController {
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
-      return res.status(401).json({ message: 'User not found' });
+      return res.status(401).json({ message: "User not found" });
     }
 
     if (!(await user.checkPassword(password))) {

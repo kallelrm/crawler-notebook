@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kallelrm/crawler-notebook#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "bee-queue": "^1.5.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
