@@ -15,7 +15,7 @@ class NotebookController {
       where: {
         filters: { [Op.in]: [filter] },
         createdAt: {
-          [Op.gte]: Sequelize.literal("NOW() - (INTERVAL '1 MINUTE')"),
+          [Op.gte]: Sequelize.literal("NOW() - (INTERVAL '10 MINUTE')"),
         },
       },
     });
@@ -67,7 +67,7 @@ class NotebookController {
       });
     }
 
-    const notes = await Notebook.create({ filters: filter, notebooks: lista });
+    await Notebook.create({ filters: filter, notebooks: lista });
 
     return res.json(lista);
   }

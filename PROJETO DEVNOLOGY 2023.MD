@@ -8,7 +8,7 @@ A partir de uma solicitação do cliente, vamos extrair os dados do site abaixo 
 - O filtro pode ser definido pelo desenvolvedor, mas deve ser possível buscar pelo menos por marca e ou modelo - OK!
 - O retorno deve ser um objeto com todas as informações do Notebook (de a cordo com filtro) - +-OK
 - Após a requisição, os dados devem ser extraídos - OK!
-- Caso chegue uma requisição idêntica nos últimos 10 minutos, não fazer a extração dos dados e entregar resultado da busca anterior - 
+- Caso chegue uma requisição idêntica nos últimos 10 minutos, não fazer a extração dos dados e entregar resultado da busca anterior - OK!!
 - Apenas usuários cadastrados poderão ter acesso nessa API, nesse caso, será necessário um cadastro (básico) de usuários e uma forma de autenticar as requisições destes. -OK!
 
 ## Prazo
@@ -24,8 +24,8 @@ A partir de uma solicitação do cliente, vamos extrair os dados do site abaixo 
 ## Diferencial: 
 
 - Testes unitários 
-- Usar NodeJS 
-- Tratar os dados sensíveis do usuário
+- Usar NodeJS - OK
+- Tratar os dados sensíveis do usuário - OK
 - Docker
 
 ## Adicionar no README do projeto: 
