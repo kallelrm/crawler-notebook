@@ -6,6 +6,7 @@ const label = [
 
 class NotebookController {
   async index(req, res) {
+    const { filter } = req.body;
     const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
@@ -25,7 +26,7 @@ class NotebookController {
      * @todo
      * Dar uma abstraída nisso aqui
      */
-    const lista = notebooks.map((dado) => {
+    let lista = notebooks.map((dado) => {
       const stringD = dado.split("\n").filter((word) => (word || null));
       const stringV = {};
 
@@ -39,6 +40,16 @@ class NotebookController {
 
       return stringV;
     });
+
+    if (filter) {
+      filter.forEach((filter) => {
+        lista = lista.filter((item) => (Object
+          .values(item)
+          .toString()
+          .toUpperCase()
+          .includes(filter.toString().toUpperCase()) ? item : null));
+      });
+    }
 
     return res.json(lista);
   }
