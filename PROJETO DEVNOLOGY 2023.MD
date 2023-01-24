@@ -5,11 +5,11 @@ A partir de uma solicitação do cliente, vamos extrair os dados do site abaixo 
 - https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops
 
 - Uma API deve ser desenvolvida para receber as solicitações do cliente. OK!
-- O filtro pode ser definido pelo desenvolvedor, mas deve ser possível buscar pelo menos por marca e ou modelo 
+- O filtro pode ser definido pelo desenvolvedor, mas deve ser possível buscar pelo menos por marca e ou modelo - OK!
 - O retorno deve ser um objeto com todas as informações do Notebook (de a cordo com filtro) - +-OK
 - Após a requisição, os dados devem ser extraídos - OK!
-- Caso chegue uma requisição idêntica nos últimos 10 minutos, não fazer a extração dos dados e entregar resultado da busca anterior
-- Apenas usuários cadastrados poderão ter acesso nessa API, nesse caso, será necessário um cadastro (básico) de usuários e uma forma de autenticar as requisições destes.
+- Caso chegue uma requisição idêntica nos últimos 10 minutos, não fazer a extração dos dados e entregar resultado da busca anterior - 
+- Apenas usuários cadastrados poderão ter acesso nessa API, nesse caso, será necessário um cadastro (básico) de usuários e uma forma de autenticar as requisições destes. -OK!
 
 ## Prazo
 
@@ -18,8 +18,8 @@ A partir de uma solicitação do cliente, vamos extrair os dados do site abaixo 
 ## Importante: 
 
 - Implantar a aplicação (Heroku, AWS free tier, Vercel ou outros) 
-- Commits bem definidos 
-- Autenticação nas rotas
+- Commits bem definidos - OK
+- Autenticação nas rotas - OK
 
 ## Diferencial: 
 

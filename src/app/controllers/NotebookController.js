@@ -1,4 +1,7 @@
 import puppeteer from "puppeteer";
+import { Op, Sequelize } from "sequelize";
+
+import Notebook from "../models/Notebook";
 
 const label = [
   "name", "screen", "cpu", "ram", "storage", "os", "keyboard",
@@ -7,6 +10,20 @@ const label = [
 class NotebookController {
   async index(req, res) {
     const { filter } = req.body;
+
+    const checkSearch = await Notebook.findAll({
+      where: {
+        filters: { [Op.in]: [filter] },
+        createdAt: {
+          [Op.gte]: Sequelize.literal("NOW() - (INTERVAL '1 MINUTE')"),
+        },
+      },
+    });
+
+    if (checkSearch.length > 0) {
+      return res.json(checkSearch[0].notebooks);
+    }
+
     const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
@@ -18,7 +35,6 @@ class NotebookController {
     try {
       notebooks = await page.$$eval("div.col-sm-4", (notebooksI) => notebooksI.map((notebook) => notebook.innerText));
     } catch (e) {
-      console.log(e);
       return res.json(e);
     }
 
@@ -50,6 +66,8 @@ class NotebookController {
           .includes(filter.toString().toUpperCase()) ? item : null));
       });
     }
+
+    const notes = await Notebook.create({ filters: filter, notebooks: lista });
 
     return res.json(lista);
   }
