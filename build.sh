@@ -17,5 +17,7 @@ npm install;
 npm run build;
 npx sequelize db:migrate;
 
+npm install -g pm2
+
 npm prune --production
 npm start;
