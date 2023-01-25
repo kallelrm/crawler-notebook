@@ -16,4 +16,6 @@ docker run --name postgres -e POSTGRES_PASSWORD=321 -e POSTGRES_USER=postgres -p
 npm install;
 npm run build;
 npx sequelize db:migrate;
+
+npm prune --production
 npm start;
