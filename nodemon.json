@@ -1,5 +1,5 @@
 {
   "execMap": {
-    "js": "node -r sucrase/register"
+    "js": "NODE_ENV=development node -r sucrase/register"
   }
 }

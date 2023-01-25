@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - data:/data/db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: postgres
+
+  api:
+    container_name: api
+    depends_on:
+      - postgres
+    links:
+      - "postgres:db" 
+    build: .
+    ports:
+      - 3333:3333
+    env_file:
+      - .env
+    volumes:
+    - .:/usr/src/app
+  
+volumes: 
+  data: {}

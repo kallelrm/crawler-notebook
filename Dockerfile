@@ -1,11 +1,18 @@
 FROM node:18
 
-WORKDIR /
+WORKDIR /usr/src/app
 
-COPY package*.json ./
-RUN npm ci --only=production
+COPY package.json ./
 
 COPY . .
-EXPOSE 8080
 
-CMD [ "node", "server.js"]
+RUN npm install
+RUN npm run build
+
+RUN chmod +x entrypoint.sh 
+ENTRYPOINT [ "./entrypoint.sh" ]
+RUN npm prune --production
+
+EXPOSE 3333
+
+RUN npm start 
