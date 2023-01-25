@@ -14,4 +14,4 @@ RUN npm prune --production
 
 EXPOSE 3333
 
-CMD [ "/bin/node" "npm start" ]
+CMD [ "/bin/node", "npm start" ]
