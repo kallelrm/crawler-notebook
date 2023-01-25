@@ -72,6 +72,8 @@ class NotebookController {
       });
     }
 
+    await browser.close();
+
     await Notebook.create({ filters: filter, notebooks: lista });
 
     return res.json(lista);
