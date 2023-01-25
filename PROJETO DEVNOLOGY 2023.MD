@@ -30,16 +30,16 @@ A partir de uma solicitação do cliente, vamos extrair os dados do site abaixo 
 
 ## Adicionar no README do projeto: 
 
-- Descrição do motivo da escolha das principais tecnologias, ferramentas e ou Frameworks usados 
-- Informar principais problemas encontrados durante o projeto 
-- Informar todas as funcionalidades do projeto
-- Documentar os endpoints 
-- Descrição de como executar a aplicação em um ambiente de desenvolvimento 
-- Informar o que não foi possível finalizar 
+- Descrição do motivo da escolha das principais tecnologias, ferramentas e ou Frameworks usados  - ok!
+- Informar principais problemas encontrados durante o projeto - ok
+- Informar todas as funcionalidades do projeto - ok
+- Documentar os endpoints - ok 
+- Descrição de como executar a aplicação em um ambiente de desenvolvimento - ok
+- Informar o que não foi possível finalizar - ok
 - Adicionar campo de observação (Livre)
 
 ## Entregáveis: 
 
-- Link da aplicação implantada
-- Documentação dos endpoints 
-- Link do Github 
+- Link da aplicação implantada: https://crawler-notebook.herokuapp.com/
+- Documentação dos endpoints - ok
+- Link do Github - https://github.com/kallelrm/crawler-notebook
