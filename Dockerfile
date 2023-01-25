@@ -1,19 +1,18 @@
 FROM node:18
 
-WORKDIR /app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json /usr/src/app
 
-COPY package.json ./
-
-COPY . ./
+COPY . 	/usr/src/app
 
 RUN npm install
 RUN npm run build
-RUN npx sequelize db:migrate
+RUN npm run db:migrate
 
-RUN npm prune --production
+# RUN npm prune --production
 
 EXPOSE 3333
 
-CMD [ "/bin/node", "npm start" ]
+CMD [ "npm", "start" ]
