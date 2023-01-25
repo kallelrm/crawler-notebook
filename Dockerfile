@@ -3,7 +3,7 @@ FROM node:18
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app
+COPY package*.json /usr/src/app
 
 COPY . 	/usr/src/app
 
@@ -15,4 +15,4 @@ RUN npm run db:migrate
 
 EXPOSE 3333
 
-CMD [ "npm", "start" ]
+CMD [ "node", "dist/server.js" ]
