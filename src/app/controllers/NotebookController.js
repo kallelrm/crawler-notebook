@@ -24,7 +24,12 @@ class NotebookController {
       return res.json(checkSearch[0].notebooks);
     }
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+      ],
+    });
 
     const page = await browser.newPage();
     await page.goto("https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops");
