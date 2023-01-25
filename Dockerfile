@@ -8,11 +8,10 @@ COPY . .
 
 RUN npm install
 RUN npm run build
+RUN npx sequelize db:migrate
 
-RUN chmod +x entrypoint.sh 
-ENTRYPOINT [ "./entrypoint.sh" ]
 RUN npm prune --production
 
 EXPOSE 3333
 
-RUN npm start 
+CMD [ "npm" "start" ]
