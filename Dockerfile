@@ -1,10 +1,12 @@
 FROM node:18
 
-WORKDIR /usr/src/app
+WORKDIR /app
+
+ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package.json ./
 
-COPY . .
+COPY . ./
 
 RUN npm install
 RUN npm run build
