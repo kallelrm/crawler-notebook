@@ -11,7 +11,7 @@ node -v;
 
 cd $workdir
 
-docker run --name postgres -e POSTGRES_PASSWORD=321 -e POSTGRES_USER=postgres -p 5433:5433 -d postgres;
+docker run --name postgres -e POSTGRES_PASSWORD=123 -e POSTGRES_USER=postgres -p 5433:5433 -d postgres;
 
 npm install;
 npm run build;
