@@ -25,6 +25,7 @@ class NotebookController {
     }
 
     const browser = await puppeteer.launch({
+      headless: true,
       args: [
         "--no-sandbox",
       ],
